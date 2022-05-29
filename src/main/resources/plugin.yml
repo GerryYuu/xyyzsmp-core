@@ -1,0 +1,10 @@
+name: xyyzsmp-core
+version: '${version}'
+main: me.gerryyuu.xyyzsmpcore.SMPCore
+api-version: 1.18
+authors: [ GerryYuu ]
+commands:
+  smpcore:
+    permission: smpcore.use
+  rule:
+    usage: "/rule"
