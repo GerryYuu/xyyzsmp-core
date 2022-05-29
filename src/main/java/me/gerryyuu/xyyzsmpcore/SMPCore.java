@@ -1,6 +1,7 @@
 package me.gerryyuu.xyyzsmpcore;
 
 import me.gerryyuu.xyyzsmpcore.command.CoreCommand;
+import me.gerryyuu.xyyzsmpcore.command.RuleCommand;
 import me.gerryyuu.xyyzsmpcore.listener.EntityListener;
 import me.gerryyuu.xyyzsmpcore.listener.PlayerListener;
 import me.gerryyuu.xyyzsmpcore.listener.ServerListener;
@@ -93,5 +94,6 @@ public final class SMPCore extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new EntityListener(), this);
         getServer().getPluginCommand("smpcore").setExecutor(new CoreCommand());
         getServer().getPluginCommand("smpcore").setTabCompleter(new CoreCommand());
+        getServer().getPluginCommand("rule").setExecutor(new RuleCommand());
     }
 }
