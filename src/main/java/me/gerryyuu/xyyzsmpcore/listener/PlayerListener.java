@@ -5,6 +5,7 @@ import me.gerryyuu.xyyzsmpcore.util.ColorUtil;
 import org.bukkit.Sound;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 
 import java.io.IOException;
@@ -25,6 +26,16 @@ public final class PlayerListener implements Listener {
             }
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    @EventHandler
+    public void onPlayerCommand(PlayerCommandPreprocessEvent event) {
+        if (SMPCore.getPluginDataManager().getConfig("config.yml").getBoolean("misc.fastHomeCommand")) {
+            if (event.getMessage().equals("/home")) {
+                event.getPlayer().performCommand("home home");
+                event.setCancelled(true);
+            }
         }
     }
 }

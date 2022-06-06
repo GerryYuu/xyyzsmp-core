@@ -1,2 +1,3 @@
 misc:
   doCreepersBreakBlock: false
+  fastHomeCommand: true
