@@ -64,7 +64,7 @@ public final class SMPCore extends JavaPlugin {
     }
 
     public static void initPluginFiles() {
-        saveDefaultConfig();
+        SMPCore.getPlugin().saveDefaultConfig();
         playerDataFolder = new File(SMPCore.getPlugin().getDataFolder().getAbsolutePath() + File.separator + "playerData" + File.separator);
         pluginDataFolder = SMPCore.getPlugin().getDataFolder();
         if (!pluginDataFolder.exists()) pluginDataFolder.mkdirs();
