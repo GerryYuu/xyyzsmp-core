@@ -29,8 +29,12 @@ public abstract class DataFileManager {
 
     public FileConfiguration getConfig(String name) {
         String fileName = name;
-        if (!name.endsWith(".yml")) fileName = name + ".yml";
-        if (configMap.containsKey(fileName)) return configMap.get(fileName);
+        if (!name.endsWith(".yml")) {
+            fileName = name + ".yml";
+        }
+        if (configMap.containsKey(fileName)) {
+            return configMap.get(fileName);
+        }
         FileConfiguration config = YamlConfiguration.loadConfiguration(getFile(fileName));
         configMap.put(fileName, config);
         return config;

@@ -67,15 +67,26 @@ public final class SMPCore extends JavaPlugin {
         SMPCore.getPlugin().saveDefaultConfig();
         playerDataFolder = new File(SMPCore.getPlugin().getDataFolder().getAbsolutePath() + File.separator + "playerData" + File.separator);
         pluginDataFolder = SMPCore.getPlugin().getDataFolder();
-        if (!pluginDataFolder.exists()) pluginDataFolder.mkdirs();
-        if (!playerDataFolder.exists()) playerDataFolder.mkdirs();
+        if (!pluginDataFolder.exists()) {
+            pluginDataFolder.mkdirs();
+        }
+        if (!playerDataFolder.exists()) {
+            playerDataFolder.mkdirs();
+        }
         playerDataManager = new PlayerDataManager(playerDataFolder);
         pluginDataManager = new PluginDataManager();
-        if (!getPluginDataManager().getFile("config.yml").exists()) SMPCore.getPlugin().saveDefaultConfig();
-        if (!getPluginDataManager().getFile("messageOnJoin.txt").exists())
+        if (!getPluginDataManager().getFile("config.yml").exists()) {
+            SMPCore.getPlugin().saveDefaultConfig();
+        }
+        if (!getPluginDataManager().getFile("messageOnJoin.txt").exists()) {
             SMPCore.getPlugin().saveResource("messageOnJoin.txt", false);
-        if (!getPluginDataManager().getFile("motd.txt").exists()) SMPCore.getPlugin().saveResource("motd.txt", false);
-        if (!getPluginDataManager().getFile("rule.txt").exists()) SMPCore.getPlugin().saveResource("rule.txt", false);
+        }
+        if (!getPluginDataManager().getFile("motd.txt").exists()) {
+            SMPCore.getPlugin().saveResource("motd.txt", false);
+        }
+        if (!getPluginDataManager().getFile("rule.txt").exists()) {
+            SMPCore.getPlugin().saveResource("rule.txt", false);
+        }
         try {
             motdLists = FileUtil.readLinesFromTxtFile(pluginDataManager.getFile("motd.txt"));
             messageOnJoinLists = FileUtil.readLinesFromTxtFile(pluginDataManager.getFile("messageOnJoin.txt"));
